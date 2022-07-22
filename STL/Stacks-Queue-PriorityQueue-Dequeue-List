@@ -1,0 +1,204 @@
+/*
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                            S T L   T U T O R I A L S
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+#include<bits/stdc++.h> // - STL Library Header File
+using namespace std;    // C++ Default Library containing all necessary function and other stuffs
+
+int main(){
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    C O N T A I N E R - 6   :    S T A C K
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    */ 
+    
+    // A Stack is a containar in STL that stores element in First In Last Out Manner (FILO Data Structure)
+    // All Operations of Stack except deletion of entire queue takes O(1) Time Complexity
+    
+    // Declaring a stack
+    stack<int> st;
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------\
+
+    // Operations on stack
+
+    // Push Operation                                                                   // -> Using push or emplace
+    st.push(1);                                                                         //      |   4   |
+    st.push(2);                                                                         //      |   3   |
+    st.push(3);                                                                         //      |   2   |
+    st.push(4);                                                                         //      |   1   | 
+                                                                                        //      ---------
+    // Pop Operation  
+    st.pop();                                                                           // -> Deletes the last inserted element in the stack
+
+    // Top Operation
+    cout << st.top() << " ";                                                            // -> Returns the Topmost element of the stack
+    cout << endl;
+
+    // Empty Operation
+    st.empty() ? cout << "True -> Stack empty" : cout << "False -> Stack not empty";    // -> Checks whether stack is empty or not
+
+    // Size Operation
+    cout << st.size() << " ";                                                           // -> Returns the size of the stack
+    cout << endl;
+
+    // Deleting the entire stack
+    while(!st.empty()){
+        st.pop();
+    }
+    cout << endl;
+    
+    st.empty() ? cout << "True -> Stack empty" : cout << "False -> Stack not empty";
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                    C O N T A I N E R - 7   :    Q U E U E
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    */ 
+
+    // A Queue is a containar in STL that stores element in First In First Out Manner (FIFO Data Structure)
+    // All Operations of Queue except deletion of entire queue takes O(1) Time Complexity
+    
+    // Declaring a stack
+    queue<int> q;
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Operations on stack
+
+    // Push Operation                                                                   // -> Using push or emplace
+    q.push(1);                                                                          //      |   1   |
+    q.push(2);                                                                          //      |   2   |
+    q.push(3);                                                                          //      |   3   |
+    q.push(4);                                                                          //      |   4   | 
+                                                                                        //      ---------
+    // Pop Operation  
+    q.pop();                                                                            // -> Deletes the last inserted element in the queue
+
+    // Front Operation
+    cout << q.front() << " ";                                                           // -> Returns the Frontmost element of the queue
+    cout << endl;
+
+    // Back Operation
+    cout << q.back() << " ";                                                            // -> Returns the Backmost element of the queue
+    cout << endl;
+
+    // Empty Operation
+    q.empty() ? cout << "True -> Queue empty" : cout << "False -> Queue not empty";     // -> Checks whether queue is empty or not
+    cout << endl;
+    
+    // Size Operation
+    cout << q.size() << " ";                                                            // -> Returns the size of the queu
+    cout << endl;
+
+    // Deleting the entire stack
+    while(!q.empty()){
+        q.pop();
+    }
+    
+    q.empty() ? cout << "True -> Queue empty" : cout << "False -> Queue not empty";
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                        C O N T A I N E R - 8   :    P R I O R I T Y    Q U E U E
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    */ 
+
+    // Priority Queue is a container in STL that stores data either in an decreasing order (Max Heap type) or in an ascending order (Min Heap Type)
+    // All Operations of Priority Queue takes O(logn) time complexity in all cases
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    //                                                  8.A   :   M A X     H E A P
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    priority_queue<int> pqMax;
+
+    // Operations on Priority Queue (Max Heap)
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Push Operation                                                                       // -> Using push or emplace
+    pqMax.push(31);                                                                         //      |   60   |
+    pqMax.push(54);                                                                         //      |   54   |
+    pqMax.push(60);                                                                         //      |   39   |
+    pqMax.push(39);                                                                         //      |   31   | 
+                                                                                            //      ---------
+    // Pop Operation
+    pqMax.pop();
+
+    // Top Operation
+    pqMax.top();                                                                            // Returns the current Max element (Topmost element)
+
+    // ====================================================================================================================================================
+
+    //                                                  8.A   :   M I N     H E A P
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    priority_queue<int,  vector<int>, greater<int>> pqMin;
+
+    // Operations on Priority Queue (Max Heap)
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Push Operation                                                                       // -> Using push or emplace
+    pqMin.push(31);                                                                         //      |   31   |
+    pqMin.push(54);                                                                         //      |   39   |
+    pqMin.push(60);                                                                         //      |   54   |
+    pqMin.push(39);                                                                         //      |   60   | 
+                                                                                            //      ---------
+    // Pop Operation
+    pqMin.pop();
+
+    // Top Operation
+    pqMin.top();                                                                            // Returns the current Min element (Topmost element)
+
+    // -------------------------------------------------------------------------------------------------------------------------------------------
+
+    // Constructing Min Heap using Max Heap
+
+    priority_queue<int> pqMinimum;
+    pqMinimum.push(-31);                                                                         //      |   -31   |
+    pqMinimum.push(-54);                                                                         //      |   -39   |
+    pqMinimum.push(-60);                                                                         //      |   -54   |
+    pqMinimum.push(-39);                                                                         //      |   -60   | 
+                                                                                                 //      -----------
+
+    while(!pqMinimum.empty()){
+        cout << -1 * pqMinimum.top() << " ";
+        pqMinimum.pop();
+    }
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                        C O N T A I N E R - 9   :    D E Q U E U E
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    */ 
+
+    // Deqeue is a container in STL which stands for double ended queue 
+    dequeue<int> dq;
+
+    // Operations on dequeue
+    // 1. push_front()  2. push_back()  3. pop_front()  4. pop_back()   5. clear()  6. empty()  7. size()   8. at()
+    // It also supports iterators -> begin(), end(), rbegin(), rend()
+
+    /*
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+                                        C O N T A I N E R - 10   :    L I S T
+    ---------------------------------------------------------------------------------------------------------------------------------------------------
+    */
+
+    // List is a container in STL
+    list<int> l;
+
+    // Operations on dequeue
+    // 1. push_front()  2. push_back()  3. pop_front()  4. pop_back()   5. clear()  6. empty()  7. size()   8. at()   9. remove()
+    // It also supports iterators -> begin(), end(), rbegin(), rend()
+
+    return 0;
+}
